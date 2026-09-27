@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shiv Medical Store</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f1fff8;
+            color: #123;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        h2 {
+            color: #087f5b;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        header {
+            min-height: 650px;
+            background: linear-gradient(
+                135deg,
+                #008f68,
+                #00b894,
+                #00cec9
+            );
+
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 60px;
+            margin-top: 70px;
+            animation: titleAnimation 2s ease;
+        }
+
+        header h2 {
+            color: white;
+            animation: fadeIn 3s ease;
+        }
+
+        header p {
+            animation: fadeIn 3s ease;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            margin-top: 35px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+
+            padding: 13px 25px;
+            margin: 7px;
+
+            border: 2px solid white;
+            border-radius: 50px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #008f68;
+
+            transform: translateY(-5px) scale(1.05);
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+
+        /* ================= FLOATING MEDICAL ICONS ================= */
+
+        .capsule {
+            position: absolute;
+            font-size: 45px;
+            animation: floating 5s infinite ease-in-out;
+        }
+
+        .capsule1 {
+            top: 100px;
+            left: 8%;
+        }
+
+        .capsule2 {
+            top: 250px;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .capsule3 {
+            bottom: 80px;
+            left: 18%;
+            animation-delay: 2s;
+        }
+
+        .capsule4 {
+            bottom: 100px;
+            right: 20%;
+            animation-delay: 3s;
+        }
+
+
+        /* ================= BUTTONS ================= */
+
+        .btn {
+            display: inline-block;
+
+            padding: 16px 32px;
+            margin: 10px;
+
+            background: #00a878;
+            color: white;
+
+            border: none;
+            border-radius: 50px;
+
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #006f52;
+
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+
+        /* ================= IMAGE ================= */
+
+        .store-image {
+            width: 80%;
+            max-width: 700px;
+
+            border-radius: 25px;
+
+            margin: 30px auto;
+
+            display: block;
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+
+            transition: 0.5s;
+        }
+
+        .store-image:hover {
+            transform: scale(1.04);
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            text-align: center;
+            background: white;
+        }
+
+        .owner-box {
+            max-width: 700px;
+            margin: 30px auto;
+
+            padding: 30px;
+
+            background: #e0fff4;
+
+            border-radius: 25px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+            transition: 0.4s;
+        }
+
+        .owner-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .owner-name {
+            font-size: 30px;
+            font-weight: bold;
+            color: #008f68;
+        }
+
+
+        /* ================= MEDICINES ================= */
+
+        .medicine-section {
+            background: #eafff7;
+            text-align: center;
+        }
+
+        .medicine-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .medicine-card {
+            width: 250px;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+            transition: 0.4s;
+
+            animation: cardAppear 1s ease;
+        }
+
+        .medicine-card:hover {
+            transform: translateY(-15px) rotate(1deg);
+
+            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+        }
+
+        .medicine-icon {
+            font-size: 55px;
+        }
+
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: white;
+            text-align: center;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .service-card {
+            width: 280px;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background: #f0fff9;
+
+            border: 2px solid #b8f5df;
+
+            transition: 0.4s;
+        }
+
+        .service-card:hover {
+            transform: scale(1.07);
+
+            background: #d9fff1;
+
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            font-size: 60px;
+            animation: pulse 2s infinite;
+        }
+
+
+        /* ================= HEALTH ================= */
+
+        .health {
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #e7fff6,
+                #ffffff
+            );
+        }
+
+        .health-title {
+            color: #008f68;
+            animation: heartbeat 2s infinite;
+        }
+
+        .health-boxes {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+
+            margin-top: 35px;
+        }
+
+        .health-box {
+            width: 200px;
+
+            padding: 25px;
+
+            background: white;
+
+            border-radius: 20px;
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .health-box:hover {
+            transform: translateY(-10px);
+        }
+
+
+        /* ================= FORM ================= */
+
+        .contact {
+            background: #e8fff7;
+            text-align: center;
+        }
+
+        form {
+            max-width: 700px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 30px;
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        input,
+        textarea,
+        select {
+
+            width: 100%;
+
+            padding: 15px;
+
+            margin: 10px 0;
+
+            border: 2px solid #b8eadb;
+
+            border-radius: 15px;
+
+            font-size: 16px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+
+            border-color: #00a878;
+
+            box-shadow: 0 0 10px rgba(0,168,120,0.2);
+
+            transform: scale(1.01);
+        }
+
+
+        /* ================= STORE INFORMATION ================= */
+
+        .store-info {
+            background: white;
+            text-align: center;
+        }
+
+        .info-table {
+
+            width: 90%;
+
+            max-width: 800px;
+
+            margin: auto;
+
+            border-collapse: collapse;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .info-table th {
+
+            background: #008f68;
+
+            color: white;
+
+            padding: 18px;
+        }
+
+        .info-table td {
+
+            padding: 18px;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-table tr {
+            transition: 0.3s;
+        }
+
+        .info-table tr:hover {
+
+            background: #e4fff6;
+
+            transform: scale(1.01);
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #006b4e;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        footer h2 {
+            color: white;
+            font-size: 35px;
+        }
+
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes titleAnimation {
+
+            0% {
+                opacity: 0;
+                transform: translateY(-80px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @keyframes fadeIn {
+
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes floating {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(15deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+
+        @keyframes cardAppear {
+
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @keyframes pulse {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        @keyframes heartbeat {
+
+            0% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.1);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.1);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            header {
+                min-height: 600px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+
+            .store-image {
+                width: 100%;
+            }
+
+            .medicine-card,
+            .service-card {
+                width: 90%;
+            }
+
+            .info-table {
+                width: 100%;
+            }
+
+            nav a {
+                padding: 10px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
+
+<header>
+
+    <div class="capsule capsule1">💊</div>
+    <div class="capsule capsule2">💉</div>
+    <div class="capsule capsule3">🩹</div>
+    <div class="capsule capsule4">💊</div>
+
+
+    <h1>💊 SHIV MEDICAL STORE</h1>
+
+    <h2>
+        Your Health, Our Priority ❤️
+    </h2>
+
+    <p>
+        Quality Medicines • Healthcare • Wellness
+    </p>
+
+
+    <nav>
+
+        <a href="#home">🏠 Home</a>
+
+        <a href="#about">👨‍⚕️ About</a>
+
+        <a href="#medicines">💊 Medicines</a>
+
+        <a href="#services">🩺 Services</a>
+
+        <a href="#health">❤️ Health</a>
+
+        <a href="#contact">📞 Contact</a>
+
+    </nav>
+
+
+    <br><br>
+
+
+    <a href="#medicines" class="btn">
+        💊 Explore Medicines
+    </a>
+
+    <a href="#contact" class="btn">
+        📞 Contact Us
+    </a>
+
+</header>
+
+
+
+<!-- ================================================= -->
+<!-- HOME -->
+<!-- ================================================= -->
+
+<section id="home">
+
+    <center>
+
+        <h1>Welcome to Shiv Medical Store</h1>
+
+        <p>
+            Welcome to Shiv Medical Store — your local destination
+            for medicines and healthcare products.
+        </p>
+
+        <p>
+            <b>
+                "Good medicines mean good and healthy health."
+            </b>
+        </p>
+
+
+        <img
+            src="medical.jpg"
+            alt="Shiv Medical Store"
+            class="store-image"
+        >
+
+
+        <a href="#about" class="btn">
+            👨‍⚕️ Know More
+        </a>
+
+    </center>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- ABOUT -->
+<!-- ================================================= -->
+
+<section id="about" class="about">
+
+    <h1>🏪 About Shiv Medical Store</h1>
+
+    <p>
+        Shiv Medical Store is focused on providing medicines
+        and healthcare products for the local community.
+    </p>
+
+
+    <div class="owner-box">
+
+        <div class="owner-name">
+            👤 Siddarth Tyagi
+        </div>
+
+        <p>
+            <b>Owner of Shiv Medical Store</b>
+        </p>
+
+        <p>
+            📍 Gango Road, Nanauta
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- MEDICINES -->
+<!-- ================================================= -->
+
+<section id="medicines" class="medicine-section">
+
+    <h1>💊 Medicines & Healthcare</h1>
+
+    <p>
+        Explore our different healthcare categories.
+    </p>
+
+
+    <div class="medicine-container">
+
+
+        <div class="medicine-card">
+
+            <div class="medicine-icon">
+                💊
+            </div>
+
+            <h2>Tablets</h2>
+
+            <p>
+                Different types of tablets and medicines.
+            </p>
+
+            <a href="#contact" class="btn">
+                Enquire
+            </a>
+
+        </div>
+
+
+
+        <div class="medicine-card">
+
+            <div class="medicine-icon">
+                🧴
+            </div>
+
+            <h2>Syrups</h2>
+
+            <p>
+                Healthcare syrups and liquid medicines.
+            </p>
+
+            <a href="#contact" class="btn">
+                Enquire
+            </a>
+
+        </div>
+
+
+
+        <div class="medicine-card">
+
+            <div class="medicine-icon">
+                🩹
+            </div>
+
+            <h2>First Aid</h2>
+
+            <p>
+                Basic first-aid and wound-care products.
+            </p>
+
+            <a href="#contact" class="btn">
+                Enquire
+            </a>
+
+        </div>
+
+
+
+        <div class="medicine-card">
+
+            <div class="medicine-icon">
+                🌡️
+            </div>
+
+            <h2>Health Devices</h2>
+
+            <p>
+                Useful healthcare monitoring products.
+            </p>
+
+            <a href="#contact" class="btn">
+                Enquire
+            </a>
+
+        </div>
+
+
+
+        <div class="medicine-card">
+
+            <div class="medicine-icon">
+                🧴
+            </div>
+
+            <h2>Personal Care</h2>
+
+            <p>
+                Personal hygiene and daily-care products.
+            </p>
+
+            <a href="#contact" class="btn">
+                Enquire
+            </a>
+
+        </div>
+
+
+
+        <div class="medicine-card">
+
+            <div class="medicine-icon">
+                🍊
+            </div>
+
+            <h2>Vitamins</h2>
+
+            <p>
+                Nutritional and wellness products.
+            </p>
+
+            <a href="#contact" class="btn">
+                Enquire
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- SERVICES -->
+<!-- ================================================= -->
+
+<section id="services" class="services">
+
+    <h1>🩺 Our Services</h1>
+
+
+    <div class="service-container">
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                💊
+            </div>
+
+            <h2>Medicines</h2>
+
+            <p>
+                Healthcare medicines and products.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🩹
+            </div>
+
+            <h2>First Aid</h2>
+
+            <p>
+                Basic first-aid products.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🌡️
+            </div>
+
+            <h2>Health Products</h2>
+
+            <p>
+                Useful healthcare accessories.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                ❤️
+            </div>
+
+            <h2>Wellness</h2>
+
+            <p>
+                Products supporting everyday wellness.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🧴
+            </div>
+
+            <h2>Personal Care</h2>
+
+            <p>
+                Personal hygiene and care products.
+            </p>
+
+        </div>
+
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                👨‍⚕️
+            </div>
+
+            <h2>Medicine Guidance</h2>
+
+            <p>
+                Ask a qualified healthcare professional
+                when appropriate.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- HEALTH -->
+<!-- ================================================= -->
+
+<section id="health" class="health">
+
+    <h1 class="health-title">
+        ❤️ Good Health, Good Life
+    </h1>
+
+    <p>
+        Good medicines mean good and healthy health.
+    </p>
+
+    <p>
+        Medicines should be used responsibly and according
+        to appropriate medical advice.
+    </p>
+
+
+    <div class="health-boxes">
+
+
+        <div class="health-box">
+
+            <h2>💧</h2>
+
+            <h3>Drink Water</h3>
+
+            <p>
+                Stay properly hydrated.
+            </p>
+
+        </div>
+
+
+
+        <div class="health-box">
+
+            <h2>🥗</h2>
+
+            <h3>Eat Healthy</h3>
+
+            <p>
+                Choose a balanced diet.
+            </p>
+
+        </div>
+
+
+
+        <div class="health-box">
+
+            <h2>🏃</h2>
+
+            <h3>Exercise</h3>
+
+            <p>
+                Stay physically active.
+            </p>
+
+        </div>
+
+
+
+        <div class="health-box">
+
+            <h2>😴</h2>
+
+            <h3>Sleep Well</h3>
+
+            <p>
+                Get adequate rest.
+            </p>
+
+        </div>
+
+
+
+        <div class="health-box">
+
+            <h2>🧼</h2>
+
+            <h3>Stay Clean</h3>
+
+            <p>
+                Maintain good hygiene.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- STORE INFORMATION -->
+<!-- ================================================= -->
+
+<section class="store-info">
+
+    <h1>📋 Store Information</h1>
+
+
+    <table class="info-table">
+
+        <tr>
+
+            <th>
+                Information
+            </th>
+
+            <th>
+                Details
+            </th>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                🏪 Store Name
+            </td>
+
+            <td>
+                Shiv Medical Store
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                👤 Owner
+            </td>
+
+            <td>
+                Siddarth Tyagi
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                📍 Address
+            </td>
+
+            <td>
+                Gango Road, Nanauta
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                📞 Phone
+            </td>
+
+            <td>
+                <a href="tel:9627169660">
+                    9627169660
+                </a>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                ⏰ Opening Hours
+            </td>
+
+            <td>
+                9:00 AM – 9:00 PM
+            </td>
+
+        </tr>
+
+    </table>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- CONTACT -->
+<!-- ================================================= -->
+
+<section id="contact" class="contact">
+
+    <h1>📞 Contact Shiv Medical Store</h1>
+
+    <p>
+        Have a medicine enquiry? Fill out the form below.
+    </p>
+
+
+    <form>
+
+        <input
+            type="text"
+            placeholder="👤 Your Name"
+            required
+        >
+
+        <input
+            type="tel"
+            placeholder="📞 Your Phone Number"
+            required
+        >
+
+        <input
+            type="text"
+            placeholder="💊 Medicine Name"
+        >
+
+        <select>
+
+            <option>
+                Select Enquiry Type
+            </option>
+
+            <option>
+                Medicine Availability
+            </option>
+
+            <option>
+                Healthcare Product
+            </option>
+
+            <option>
+                General Enquiry
+            </option>
+
+        </select>
+
+
+        <textarea
+            rows="6"
+            placeholder="📝 Write your message..."
+        ></textarea>
+
+
+        <button
+            type="submit"
+            class="btn"
+        >
+            📤 Submit Enquiry
+        </button>
+
+
+        <button
+            type="reset"
+            class="btn"
+        >
+            🔄 Reset
+        </button>
+
+    </form>
+
+
+    <br>
+
+
+    <a
+        href="tel:9627169660"
+        class="btn"
+    >
+        📞 Call 9627169660
+    </a>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- IMPORTANT INFORMATION -->
+<!-- ================================================= -->
+
+<section>
+
+    <center>
+
+        <h1>⚠️ Important Information</h1>
+
+        <p>
+            Medicines should be used according to the instructions
+            of a doctor, pharmacist, or the medicine packaging.
+        </p>
+
+        <p>
+            Do not start, stop, or change prescription medicines
+            without appropriate medical advice.
+        </p>
+
+    </center>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+
+<footer>
+
+    <h2>
+        💊 SHIV MEDICAL STORE 💊
+    </h2>
+
+    <p>
+        Your Health, Our Priority ❤️
+    </p>
+
+    <p>
+        👤 Owner: Siddarth Tyagi
+    </p>
+
+    <p>
+        📍 Gango Road, Nanauta
+    </p>
+
+    <p>
+        📞 9627169660
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Shiv Medical Store. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
